@@ -71,9 +71,11 @@ body {
 }
 .minus {
   color: red;
+  cursor: pointer;
 }
 .plus {
   color: white;
+  cursor: pointer;
 }
 /* tablet media  */
 @media (max-width: 1000px) {

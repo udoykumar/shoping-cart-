@@ -29,7 +29,7 @@ let shopItemData = [
     img: "../images/img-4.jpg",
   },
 ];
-let basket = [];
+let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 let generateShop = () => {
   return (shop.innerHTML = shopItemData
@@ -69,8 +69,9 @@ let increment = (id) => {
   } else {
     search.item += 1;
   }
-  console.log(basket);
+  localStorage.setItem("data", JSON.stringify(basket));
   update(selectedItem);
+  calculation();
 };
 let decrement = (id) => {
   let selectedItem = id;
@@ -81,13 +82,19 @@ let decrement = (id) => {
   else {
     search.item -= 1;
   }
-  console.log(basket);
   update(selectedItem);
   basket = basket.filter((x) => x.item !== 0);
+  calculation();
 };
 let update = (id) => {
   // console.log(id);
   let search = basket.find((x) => x.id === id);
   document.getElementById(id).innerHTML = search.item;
-  console.log(search.item);
+};
+
+let calculation = () => {
+  let cartIcon = document.getElementById("cartAmount");
+
+  let cartCount = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
+  cartIcon.innerHTML = cartCount;
 };
