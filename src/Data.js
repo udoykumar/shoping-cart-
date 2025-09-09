@@ -1,4 +1,4 @@
-let shopItemsData = [
+let shopItemData = [
   {
     id: "jfhgbvnscs",
     name: "Casual Shirt",
@@ -19,6 +19,62 @@ let shopItemsData = [
     price: 25,
     desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
     img: "images/img-3.jpg",
+  },
+  {
+    id: "thyfhcbcv",
+    name: "Mens Suit",
+    price: 300,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "images/img-4.jpg",
+  },
+  {
+    id: "thyfhcbcv",
+    name: "Mens Suit",
+    price: 300,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "images/img-4.jpg",
+  },
+  {
+    id: "thyfhcbcv",
+    name: "Mens Suit",
+    price: 300,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "images/img-4.jpg",
+  },
+  {
+    id: "thyfhcbcv",
+    name: "Mens Suit",
+    price: 300,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "images/img-4.jpg",
+  },
+  {
+    id: "thyfhcbcv",
+    name: "Mens Suit",
+    price: 300,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "images/img-4.jpg",
+  },
+  {
+    id: "thyfhcbcv",
+    name: "Mens Suit",
+    price: 300,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "images/img-4.jpg",
+  },
+  {
+    id: "thyfhcbcv",
+    name: "Mens Suit",
+    price: 300,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "images/img-4.jpg",
+  },
+  {
+    id: "thyfhcbcv",
+    name: "Mens Suit",
+    price: 300,
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
+    img: "images/img-4.jpg",
   },
   {
     id: "thyfhcbcv",

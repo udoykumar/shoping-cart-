@@ -1,40 +1,13 @@
 let shop = document.getElementById("shop");
-let shopItemData = [
-  {
-    id: 1,
-    name: "casual shirt",
-    price: 343,
-    desc: "jasdf klasjdfkl lafdksa",
-    img: "./images/img-1.jpg",
-  },
-  {
-    id: 2,
-    name: "casual",
-    price: 43,
-    desc: "jasdf klasjdfkl lafdksa",
-    img: "./images/img-2.jpg",
-  },
-  {
-    id: 3,
-    name: "casual shi0000rt",
-    price: 33,
-    desc: "jasdf klasjdfkl lafdksa",
-    img: "./images/img-3.jpg",
-  },
-  {
-    id: 4,
-    name: "casual shirt",
-    price: 34,
-    desc: "jasdf klasjdfkl lafdksa",
-    img: "../images/img-4.jpg",
-  },
-];
+
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 let generateShop = () => {
   return (shop.innerHTML = shopItemData
-    .map((item) => {
-      const { id, name, price, img, desc } = item;
+    .map((x) => {
+      let { id, name, price, img, desc } = x;
+      let load = basket.find((y) => y.id === id) || [];
+      console.log(load);
       return `
     <div id=produ-id-${id} class="item">
       <img width="220" src=${img} alt="">
@@ -45,7 +18,9 @@ let generateShop = () => {
           <h2>${price}</h2>
           <div class="buttons">
             <p onclick= "decrement(${id})" class="minus">-</p>
-            <div id=${id} class="quantity">0</div>
+            <div id=${id} class="quantity">${
+        load.item === undefined ? "0" : load.item
+      }</div>
             <p onclick= "increment(${id})" class="plus">+</p>
           </div>
         </div>
@@ -71,7 +46,6 @@ let increment = (id) => {
   }
   localStorage.setItem("data", JSON.stringify(basket));
   update(selectedItem);
-  calculation();
 };
 let decrement = (id) => {
   let selectedItem = id;
@@ -84,7 +58,7 @@ let decrement = (id) => {
   }
   update(selectedItem);
   basket = basket.filter((x) => x.item !== 0);
-  calculation();
+  localStorage.setItem("data", JSON.stringify(basket));
 };
 let update = (id) => {
   // console.log(id);
@@ -95,6 +69,6 @@ let update = (id) => {
 let calculation = () => {
   let cartIcon = document.getElementById("cartAmount");
 
-  let cartCount = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
-  cartIcon.innerHTML = cartCount;
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x, y) => x + y, 0);
 };
+calculation();
